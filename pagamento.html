@@ -11,12 +11,30 @@
             margin: 0;
             padding: 0;
         }
-
         header {
-            background-color: #6982ff;
-            color: white;
+            background-color: #5d7ed1; /* Rosa médio */
+            padding: 15px;
             text-align: center;
-            padding: 10px 0;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #b9c6f5;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #7795f7; /* Vermelho rosado */
         }
 
         .container {
@@ -90,9 +108,17 @@
 </head>
 <body>
 
+        <a href="pagament"></a>
     <header>
         <h1>Boticária Blue Pentals</h1>
     </header>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="carrinho.html">Produtos</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="comentários.html">Comentários</a>
+        <a href="pagamento.html">Finalizar Compra</a>
+    </nav>
 
     <div class="container">
         <h2>Produtos Selecionados</h2>
