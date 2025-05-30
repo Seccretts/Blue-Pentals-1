@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho de Compras</title>
+    <title>Página de Compra</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color:  #b6ceff;
+            background-color: #b6ceff;
             margin: 0;
             padding: 0;
         }
-            header {
+        header {
             background-color: #5d7ed1; /* Rosa médio */
             padding: 15px;
             text-align: center;
@@ -38,148 +38,138 @@
         }
 
         .container {
-            width: 80%;
-            margin: 30px auto;
-        }
-        .products, .cart {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-        .product, .cart-item {
-            background-color:  #eeeeee;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
-            margin: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 200px;
-            text-align: center;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .product img, .cart-item img {
-            width: 100%;
-            border-radius: 5px;
+
+        h2 {
+            color: #333;
         }
-        .cart {
-            flex-direction: column;
-        }
-        .cart-item {
+
+        .product {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
-        .cart-item p {
-            margin: 0;
+
+        .product img {
+            width: 100px;
+            height: auto;
+            border-radius: 9px;
         }
-        .total {
-            font-size: 20px;
-            font-weight: bold;
-            text-align: right;
+
+        .price {
+            font-size: 1.2em;
+            color:  #3359d6;
+        }
+
+        .payment-options {
             margin-top: 20px;
         }
-        .add-to-cart-btn, .checkout-btn {
-            background-color:  #3359d6;
-            color: white;
+
+        .payment-button {
             padding: 10px;
+            background-color: #3359d6;
+            color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
+            width: 100%;
+            font-size: 1.1em;
         }
-        .add-to-cart-btn:hover, .checkout-btn:hover {
-            background-color: #0654fb;
+
+        .payment-button:disabled {
+            background-color: #95a5a6;
+        }
+
+        .confirmation {
+            margin-top: 20px;
+            display: none;
+            padding: 10px;
+            background-color:  #07fb6d;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .payment-method {
+            margin-top: 15px;
+        }
+
+        .payment-method label {
+            margin-right: 15px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Boticária Blue Pentals</h1>
-  <nav>
-        <a href="index.html">Início</a>
-        <a href="carrinho.html">Produtos</a>
+        <a href="pagament"></a>
+    <header>
+        <h1>Boticária Blue Pentals</h1>
+    </header>
+    <nav>
+        <a href="site.html">Início</a>
+        <a href="carrinho.html">Carrinho</a>
         <a href="perfil.html">Perfil</a>
         <a href="comentários.html">Comentários</a>
         <a href="pagamento.html">Finalizar Compra</a>
     </nav>
 
-    <!-- Lista de Produtos -->
-    <div class="products">
+    <div class="container">
+        <h2>Produtos Selecionados</h2>
         <div class="product">
-            <img src="https://th.bing.com/th/id/OIP.a-4crVUf7qA8kNXm_J2i7gHaHa?w=650&h=650&rs=1&pid=ImgDetMain" alt="Produto 1">
-            <h3>Perfume Feminino Bareena</h3>
-            <p>R$ 120,00</p>
-            <button class="add-to-cart-btn" onclick="addToCart('Perfume Feminino Bareena', 120,00)">Adicionar ao Carrinho</button>
+            <img src="https://th.bing.com/th/id/OIP.a-4crVUf7qA8kNXm_J2i7gHaHa?w=650&h=650&rs=1&pid=ImgDetMain" alt="Produto">
+            <div>
+                <h3>Scandal</h3>
+                <p>Produto de otima qualidade.</p>
+                <p class="price">R$ 180,00</p>
+            </div>
         </div>
-        <div class="product">
-            <img src="https://epocacosmeticos.vteximg.com.br/arquivos/ids/807283-450-450/3614273790826.01.jpg.jpg?v=638775791192870000" alt="Produto 2">
-            <h3>Perfume Masculino Valentino</h3>
-            <p>R$ 170,90</p>
-            <button class="add-to-cart-btn" onclick="addToCart('Perfume Masculino Valentino', 170,90)">Adicionar ao Carrinho</button>
+
+        <h3>Escolha uma forma de pagamento</h3>
+        <div class="payment-method">
+            <label>
+                <input type="radio" name="payment" value="cartao" id="cartao"> Cartão de Crédito
+            </label>
+            <label>
+                <input type="radio" name="payment" value="boleto" id="boleto"> Boleto Bancário
+            </label>
+            <label>
+                <input type="radio" name="payment" value="pix" id="pix"> PIX
+            </label>
         </div>
-        <div class="product">
-            <img src="https://images.tcdn.com.br/img/img_prod/648556/perfume_jean_paul_gaultier_sacandal_feminino_80ml_eau_de_parfum_9061_1_20191023135128.jpg" alt="Produto 3">
-            <h3>Perfume Feminino perfume Scandal</h3>
-            <p>R$ 180,00</p>
-            <button class="add-to-cart-btn" onclick="addToCart('Perfume Feminino Scandal', 180,00)">Adicionar ao Carrinho</button>
+
+        <button id="confirmButton" class="payment-button" disabled>Finalizar Compra</button>
+
+        <div id="confirmationMessage" class="confirmation">
+            <p>Compra realizada com sucesso! Obrigada pela sua compra.</p>
         </div>
     </div>
 
-    <hr>
+    <script>
+        // Função para habilitar ou desabilitar o botão de confirmação
+        const paymentButtons = document.querySelectorAll('input[name="payment"]');
+        const confirmButton = document.getElementById('confirmButton');
 
-    <h2>Carrinho de Compras</h2>
-    <div class="cart" id="cart">
-        <!-- Itens do carrinho serão adicionados aqui -->
-    </div>
-
-    <div class="total">
-        Total: R$ <span id="total-price">0.00</span>
-    </div>
-
-    <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
-</div>
-
-<script>
-    let cart = [];
-    let total = 0;
-
-    // Função para adicionar item ao carrinho
-    function addToCart(productName, productPrice) {
-        const item = { name: productName, price: productPrice };
-        cart.push(item);
-        total += productPrice;
-        updateCart();
-    }
-
-    // Função para atualizar a exibição do carrinho
-    function updateCart() {
-        const cartContainer = document.getElementById('cart');
-        cartContainer.innerHTML = ''; // Limpa o carrinho antes de adicionar novos itens
-
-        cart.forEach(item => {
-            const cartItemElement = document.createElement('div');
-            cartItemElement.classList.add('cart-item');
-            cartItemElement.innerHTML = `
-                <p>${item.name}</p>
-                <p>R$ ${item.price.toFixed(2)}</p>
-            `;
-            cartContainer.appendChild(cartItemElement);
+        paymentButtons.forEach(button => {
+            button.addEventListener('change', () => {
+                confirmButton.disabled = false;  // Habilita o botão
+            });
         });
 
-        document.getElementById('total-price').innerText = total.toFixed(2);
-    }
-
-    // Função para finalizar a compra
-    function checkout() {
-        if (cart.length === 0) {
-            alert("Seu carrinho está vazio!");
-            return;
-        }
-        alert(`Compra finalizada! Total: R$ ${total.toFixed(2)}`);
-        cart = [];
-        total = 0;
-        updateCart();
-    }
-</script>
+        // Função para exibir a confirmação da compra
+        confirmButton.addEventListener('click', () => {
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            confirmationMessage.style.display = 'block'; // Mostra a confirmação
+            confirmButton.disabled = true; // Desabilita o botão após a compra
+            confirmButton.textContent = 'Compra Confirmada';
+        });
+    </script>
 
 </body>
 </html>
